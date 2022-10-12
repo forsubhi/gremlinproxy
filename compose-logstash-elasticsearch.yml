@@ -5,7 +5,7 @@ es:
         - "29200:9200"
         - "29300:9300"
 logstash:
-    image: logstash
+    image: logstash:8.4.3
     command: logstash -e " input {udp {codec=>json port=>8092}} output {elasticsearch {hosts=>es index=>gremlin}} "
     ports:
         - "8092:8092/udp"
